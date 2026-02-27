@@ -1,0 +1,16 @@
+<nav class="sidebar" role="navigation" aria-label="Menu lateral">
+  <div class="brand-area">
+    <div class="logo-icon">SB</div>
+    <span class="logo-text">Sandão Bank</span>
+  </div>
+
+  <mat-nav-list>
+    @for (item of items; track item.route) {
+    <a mat-list-item class="sidebar__link" [routerLink]="item.route" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+      <span class="sidebar__text">{{ item.label }}</span>
+    </a>
+    }
+  </mat-nav-list>
+</nav>

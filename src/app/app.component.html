@@ -1,0 +1,17 @@
+<ng-container *ngIf="!isLoginPage; else loginTemplate">
+  <mat-sidenav-container class="app-container">
+    <mat-sidenav #sidenav class="app-sidenav" mode="side" opened>
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-header (menuClick)="sidenav.toggle()"></app-header>
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
+
+<ng-template #loginTemplate>
+  <router-outlet></router-outlet>
+</ng-template>

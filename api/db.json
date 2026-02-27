@@ -1,0 +1,187 @@
+{
+  "account": {
+    "id": 1,
+    "name": "Cliente Demo",
+    "balance": 73021.75
+  },
+  "transactions": [
+    {
+      "id": "1",
+      "date": "2026-02-01T10:00:00",
+      "description": "Salário",
+      "amount": 4500,
+      "type": "income"
+    },
+    {
+      "id": "2",
+      "date": "2026-02-02T14:32:00",
+      "description": "Supermercado",
+      "amount": -230.5,
+      "type": "expense"
+    },
+    {
+      "id": "3",
+      "date": "2026-02-03T20:10:00",
+      "description": "Netflix",
+      "amount": -39.9,
+      "type": "expense"
+    },
+    {
+      "id": "4",
+      "date": "2026-02-05T09:15:00",
+      "description": "Freelance",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "id": "6d70",
+      "date": "2026-02-24T22:21:37.578Z",
+      "description": "Transferência para Ana Silva",
+      "amount": -10,
+      "type": "expense"
+    },
+    {
+      "id": "6808",
+      "date": "2026-02-25T00:14:23.257Z",
+      "description": "Crédito Pessoal Aprovado",
+      "amount": 50000,
+      "type": "income"
+    },
+    {
+      "id": "c450",
+      "date": "2026-02-25T00:25:53.562Z",
+      "description": "Crédito Pessoal Aprovado",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "id": "e0ba",
+      "date": "2026-02-25T00:26:22.287Z",
+      "description": "Transferência para Mãe",
+      "amount": -50000,
+      "type": "expense"
+    },
+    {
+      "id": "b3eb",
+      "date": "2026-02-25T00:28:40.805Z",
+      "description": "Crédito Pessoal Aprovado",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "id": "e985",
+      "date": "2026-02-25T00:31:36.515Z",
+      "description": "Transferência para Ivirson",
+      "amount": -1000,
+      "type": "expense"
+    },
+    {
+      "date": "2026-02-26T23:38:25.398Z",
+      "description": "Crédito Pessoal Aprovado",
+      "amount": 1000,
+      "type": "income",
+      "id": "nI1M4QQ"
+    },
+    {
+      "date": "2026-02-27T00:55:25.843Z",
+      "description": "Crédito Pessoal Aprovado",
+      "amount": 37800,
+      "type": "income",
+      "id": "xhPflen"
+    },
+    {
+      "date": "2026-02-27T00:55:44.808Z",
+      "description": "Transferência para Ivirson",
+      "amount": -10000,
+      "type": "expense",
+      "id": "302NWFs"
+    },
+    {
+      "date": "2026-02-27T01:04:20.021Z",
+      "description": "Transferência para Mãe",
+      "amount": -1999,
+      "type": "expense",
+      "id": "Anq7Qpe"
+    },
+    {
+      "date": "2026-02-27T01:04:34.511Z",
+      "description": "Transferência para Beatriz M.",
+      "amount": -10000,
+      "type": "expense",
+      "id": "kJJjwi8"
+    },
+    {
+      "date": "2026-02-27T01:04:48.892Z",
+      "description": "Crédito Pessoal Aprovado",
+      "amount": 50000,
+      "type": "income",
+      "id": "0g-Tzk-"
+    }
+  ],
+  "transfers": [],
+  "loans": [
+    {
+      "id": "fd3d",
+      "amount": 50000,
+      "installments": 48,
+      "monthlyPayment": 1800.2996895210936,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-25T00:14:23.257Z"
+    },
+    {
+      "id": "b688",
+      "amount": 50000,
+      "installments": 48,
+      "monthlyPayment": 1800.2996895210936,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-25T00:18:28.820Z"
+    },
+    {
+      "id": "191e",
+      "amount": 1000,
+      "installments": 12,
+      "monthlyPayment": 97.48712698833825,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-25T00:25:53.562Z"
+    },
+    {
+      "id": "804b",
+      "amount": 1000,
+      "installments": 12,
+      "monthlyPayment": 97.48712698833825,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-25T00:28:40.805Z"
+    },
+    {
+      "amount": 1000,
+      "installments": 12,
+      "monthlyPayment": 97.48712698833825,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-26T23:38:25.398Z",
+      "id": "iWhNUlM"
+    },
+    {
+      "amount": 37800,
+      "installments": 12,
+      "monthlyPayment": 3685.0134001591855,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-27T00:55:25.843Z",
+      "id": "6Qkgevd"
+    },
+    {
+      "amount": 50000,
+      "installments": 12,
+      "monthlyPayment": 4874.356349416912,
+      "interestRate": 0.025,
+      "status": "approved",
+      "date": "2026-02-27T01:04:48.892Z",
+      "id": "DS5bmbi"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<div class="extrato-container fade-in-up">
+  <div class="glass-panel">
+    <div class="panel-header">
+      <h2>Extrato</h2>
+      <button class="filter-btn">
+        <mat-icon>filter_list</mat-icon>
+        Filtrar
+      </button>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let t of transactions; let i = index" [style.animation-delay]="i * 0.05 + 's'">
+        <div class="timeline-left">
+          <span class="date-day">{{ t.rawDate | date:'dd' }}</span>
+          <span class="date-month">{{ t.monthShort }}</span>
+        </div>
+
+        <div class="timeline-marker">
+          <div class="marker-dot" [ngClass]="t.type">
+            <mat-icon>{{ t.type === 'credit' ? 'arrow_downward' : 'arrow_upward' }}</mat-icon>
+          </div>
+          <div class="marker-line" *ngIf="i < transactions.length - 1"></div>
+        </div>
+
+        <div class="timeline-content">
+          <div class="content-main">
+            <h3 class="transaction-desc">{{ t.description }}</h3>
+            <span class="transaction-time">{{ t.fullDate }}</span>
+          </div>
+          <div class="transaction-actions">
+            <button class="action-btn edit" (click)="editTransaction(t)">
+              <mat-icon>edit_outline</mat-icon>
+            </button>
+            <button class="action-btn delete" (click)="deleteTransaction(t)">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </div>
+          <div class="transaction-amount" [ngClass]="t.type">
+            {{ t.amount | currency:'BRL':'symbol':'1.2-2' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

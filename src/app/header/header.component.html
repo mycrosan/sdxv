@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <button mat-icon-button aria-label="Menu" (click)="menuClick.emit()" class="d-md-none">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="toolbar__spacer"></span>
+
+  <div class="user-actions">
+    <button mat-icon-button class="notification-btn" aria-label="Notificações">
+      <mat-icon>notifications_none</mat-icon>
+      <span class="badge"></span>
+    </button>
+
+    <div class="profile-pill">
+      <div class="avatar">S</div>
+      <span class="username">Sandy</span>
+      <mat-icon class="chevron">expand_more</mat-icon>
+    </div>
+  </div>
+</mat-toolbar>

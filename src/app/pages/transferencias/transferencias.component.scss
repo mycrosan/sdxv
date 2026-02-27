@@ -1,0 +1,338 @@
+.transfer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== LEFT COLUMN ===== */
+.transfer-panel {
+  padding: 32px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .balance-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 20px;
+    color: var(--success);
+    font-weight: 600;
+    font-size: 14px;
+
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.section-group {
+  margin-bottom: 40px;
+
+  .section-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.error-text {
+  color: #ef4444;
+  /* tailwind red-500 equivalent */
+  font-size: 13px;
+  margin-top: 8px;
+  font-weight: 500;
+  animation: popIn 0.3s ease forwards;
+}
+
+/* Contacts Scroll */
+.contacts-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0 12px 4px;
+  margin-top: -10px;
+
+  /* Hide scrollbar but allow scroll */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.new-contact-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 70px;
+
+  .btn-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px dashed var(--primary-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-base);
+    transition: all 0.2s ease;
+
+    mat-icon {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  &:hover .btn-circle {
+    background: rgba(59, 130, 246, 0.1);
+    transform: scale(1.05);
+  }
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 70px;
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s var(--ease-bounce);
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    position: relative;
+  }
+
+  .name {
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.3s var(--ease-bounce);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+    text-align: center;
+  }
+
+  &:hover:not(.selected) .avatar {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:active .avatar {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease !important;
+  }
+
+  &.selected {
+    .avatar {
+      border-color: white;
+      transform: scale(1.1) translateY(-8px) !important;
+      box-shadow: var(--glow-primary), var(--shadow-lg);
+      animation: pulseSelection 2s infinite;
+    }
+
+    .name {
+      color: var(--primary-base);
+      font-weight: 700;
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.selection-indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  background: var(--success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: var(--shadow-sm);
+  animation: popIn 0.3s var(--ease-bounce) forwards;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+@keyframes pulseSelection {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Avatar Colors (Better Gradients) */
+.bg-blue-500 {
+  background: var(--primary-gradient);
+}
+
+.bg-green-500 {
+  background: var(--emerald-gradient);
+}
+
+.bg-purple-500 {
+  background: var(--purple-gradient);
+}
+
+.bg-yellow-500 {
+  background: var(--warning);
+}
+
+.bg-pink-500 {
+  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+/* Amount Input */
+.amount-group {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+
+  &.has-error {
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.3);
+
+    .currency-symbol,
+    .amount-input {
+      color: #ef4444;
+    }
+  }
+}
+
+.amount-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  .currency-symbol {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-top: 8px;
+  }
+
+  .amount-input {
+    background: transparent;
+    border: none;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--text-primary);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    outline: none;
+    font-family: var(--font-display);
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Remove arrows from number input */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+/* Send Button */
+.send-btn {
+  margin-top: auto;
+  height: 56px !important;
+  font-size: 16px !important;
+  border-radius: 16px !important;
+
+  mat-icon {
+    margin-left: 8px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .transfer-panel {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .amount-input-wrapper .amount-input {
+    font-size: 40px;
+  }
+}

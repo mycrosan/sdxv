@@ -1,0 +1,80 @@
+<div class="page-container py-4">
+  <div class="transfer-container animate-fade-in">
+
+    <!-- Main Transfer Panel -->
+    <form class="glass-panel transfer-panel" [formGroup]="transferForm" (ngSubmit)="confirmTransfer()">
+      <div class="panel-header">
+        <h2>Nova Transferência</h2>
+        <div class="balance-badge">
+          <mat-icon>account_balance_wallet</mat-icon>
+          <span>Saldo: {{ currentBalance | currency:'BRL':'symbol':'1.2-2' }}</span>
+        </div>
+      </div>
+
+      <!-- Contact Selection -->
+      <div class="section-group">
+        <label class="section-label">Para quem?</label>
+        <div class="contacts-scroll">
+          <div class="new-contact-btn">
+            <div class="btn-circle">
+              <mat-icon>add</mat-icon>
+            </div>
+            <span>Novo</span>
+          </div>
+
+          <div class="contact-item" *ngFor="let contact of recentContacts"
+            [class.selected]="transferForm.get('contact')?.value?.id === contact.id" (click)="selectContact(contact)">
+            <div class="avatar" [ngClass]="contact.avatarColor">
+              {{ contact.initials }}
+              <div class="selection-indicator" *ngIf="transferForm.get('contact')?.value?.id === contact.id">
+                <mat-icon>check</mat-icon>
+              </div>
+            </div>
+            <span class="name">{{ contact.name }}</span>
+          </div>
+        </div>
+        <div class="error-text" *ngIf="transferForm.get('contact')?.invalid && transferForm.get('contact')?.touched">
+          Selecione um contato.
+        </div>
+      </div>
+
+      <!-- Amount Input -->
+      <div class="section-group amount-group"
+        [class.has-error]="transferForm.get('amount')?.invalid && transferForm.get('amount')?.touched">
+        <label class="section-label">Qual o valor?</label>
+        <div class="amount-input-wrapper">
+          <input type="text" formControlName="amount" class="amount-input" placeholder="0,00" autofocus
+            mask="separator.2" thousandSeparator="." decimalMarker="," prefix="R$ ">
+        </div>
+        <div class="error-text"
+          *ngIf="transferForm.get('amount')?.hasError('required') && transferForm.get('amount')?.touched">
+          O valor é obrigatório.
+        </div>
+        <div class="error-text"
+          *ngIf="transferForm.get('amount')?.hasError('min') && transferForm.get('amount')?.touched">
+          O valor deve ser maior que zero.
+        </div>
+        <div class="error-text"
+          *ngIf="transferForm.get('amount')?.hasError('max') && transferForm.get('amount')?.touched">
+          Saldo insuficiente.
+        </div>
+      </div>
+
+      <!-- Description (Optional) -->
+      <div class="section-group">
+        <mat-form-field appearance="outline" class="w-100 custom-field">
+          <mat-label>Descrição (opcional)</mat-label>
+          <input matInput formControlName="description" placeholder="Ex: Aluguel, Jantar...">
+          <mat-icon matPrefix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <!-- Action Button -->
+      <button type="submit" mat-flat-button color="primary" class="send-btn" [disabled]="transferForm.invalid">
+        TRANSFERIR AGORA
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+
+    </form>
+  </div>
+</div>

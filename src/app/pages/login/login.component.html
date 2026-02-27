@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="glass-card login-card fade-in-up">
+    <div class="brand-header">
+      <div class="logo-wrapper">
+        <div class="logo-icon">SB</div>
+        <div class="logo-glow"></div>
+      </div>
+      <h1>Sandão Bank</h1>
+      <p>O futuro do seu dinheiro</p>
+    </div>
+
+    <form class="login-form">
+      <mat-form-field appearance="outline" class="custom-field">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="000.000.000-00">
+        <mat-icon matPrefix>person_outline</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-field">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" placeholder="••••••••">
+        <mat-icon matPrefix>lock_outline</mat-icon>
+        <mat-icon matSuffix class="toggle-pwd">visibility</mat-icon>
+      </mat-form-field>
+
+      <div class="actions">
+        <a href="#" class="forgot-pwd">Esqueci minha senha</a>
+      </div>
+
+      <button mat-flat-button color="primary" class="login-btn" (click)="login()">
+        ENTRAR
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </form>
+
+    <div class="footer">
+      <span>Não tem conta? <a href="#">Abra agora</a></span>
+    </div>
+  </div>
+</div>

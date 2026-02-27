@@ -1,0 +1,194 @@
+.simulator-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.simulator-content {
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    }
+
+    .amount-field {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .currency {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-tertiary);
+        }
+
+        .large-input {
+            background: transparent;
+            border: none;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-primary);
+            width: 100%;
+            outline: none;
+            font-family: var(--font-display);
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+
+    .installment-display {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+
+        .value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-base);
+        }
+
+        .term {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+        }
+    }
+
+    .simulation-details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-secondary);
+
+            .value {
+                font-weight: 700;
+                color: var(--text-primary);
+            }
+        }
+    }
+}
+
+.result-card {
+    background: var(--brand-gradient);
+    color: white !important;
+    border: none !important;
+
+    .card-content {
+        min-height: 100%;
+    }
+
+    .loan-highlight {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .card-label {
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+
+    .payment-value {
+        font-size: clamp(52px, 6vw, 68px);
+        line-height: 0.95;
+        font-weight: 800;
+        font-family: var(--font-display);
+        color: white;
+        word-break: break-word;
+    }
+
+    .request-btn {
+        height: 56px !important;
+        border-radius: 16px !important;
+        font-weight: 700 !important;
+        margin-top: 24px;
+        background: white !important;
+        color: var(--primary-dark) !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+
+        mat-icon {
+            margin-left: 8px;
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+    }
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &.approved {
+        background: rgba(16, 185, 129, 0.1);
+        color: var(--success);
+    }
+
+    &.pending {
+        background: rgba(245, 158, 11, 0.1);
+        color: var(--warning);
+    }
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-tertiary);
+
+    .huge-icon {
+        font-size: 64px;
+        width: 64px;
+        height: 64px;
+        opacity: 0.3;
+    }
+}
+
+.balance-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 20px;
+    color: var(--primary-base);
+    font-weight: 600;
+    font-size: 14px;
+
+    mat-icon {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+    }
+}
