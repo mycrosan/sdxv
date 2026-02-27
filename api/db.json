@@ -111,11 +111,11 @@
       "id": "kJJjwi8"
     },
     {
-      "date": "2026-02-27T01:04:48.892Z",
+      "id": "0g-Tzk-",
       "description": "Crédito Pessoal Aprovado",
       "amount": 50000,
-      "type": "income",
-      "id": "0g-Tzk-"
+      "date": "2026-02-27T01:04:48.892Z",
+      "type": "income"
     }
   ],
   "transfers": [],

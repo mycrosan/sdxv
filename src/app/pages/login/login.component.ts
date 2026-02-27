@@ -17,7 +17,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   constructor(private router: Router) {}
 
-  login() {
-    this.router.navigate(['/dashboard']);
+  login(event?: Event) {
+    event?.preventDefault();
+    this.router.navigateByUrl('/dashboard');
   }
 }

@@ -1,64 +1,87 @@
-# CaixaversoAngular
+# CaixaVerso Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Aplicação bancária de demonstração construída com Angular 19, com foco em:
 
-## Development server
+- Painel principal com saldo e transações
+- Extrato
+- Transferências
+- Simulação e solicitação de crédito
 
-To start a local development server, run:
+## Tecnologias
 
-```bash
-ng serve
-```
+- Angular 19
+- Angular Material
+- Bootstrap
+- `json-server` (API fake local)
+- `ngx-mask` (máscaras de input)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Pré-requisitos
 
-## Code scaffolding
+- Node.js 18+ (recomendado)
+- npm
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Como executar
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+1. Instale as dependências:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+2. Inicie aplicação e API fake juntos:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+3. Acesse no navegador:
 
-For end-to-end (e2e) testing, run:
+`http://localhost:4200`
 
-```bash
-ng e2e
-```
+## Scripts disponíveis
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `npm start`: sobe frontend Angular e API fake (`json-server`) ao mesmo tempo
+- `npm run api`: sobe somente a API fake na porta `3000`
+- `npm run build`: gera build de produção em `dist/`
+- `npm run watch`: build em modo observação (desenvolvimento)
+- `npm test`: executa testes unitários
 
-## Additional Resources
+## API fake
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Os dados locais ficam em:
 
-Fazer os menus funcionarem usando os observables
+- `api/db.json`
 
-CPF: 000.000.000-00
-Senha: qualquer uma
+Ao rodar `npm run api`, os endpoints principais ficam disponíveis em:
+
+- `GET /account`
+- `GET /transactions`
+- `POST /transactions`
+- `PUT /transactions/:id`
+- `DELETE /transactions/:id`
+- `GET /loans`
+- `POST /loans`
+- `PATCH /account`
+
+Base URL padrão:
+
+- `http://localhost:3000`
+
+## Acesso (login)
+
+- CPF: `000.000.000-00`
+- Senha: qualquer valor
+
+## Estrutura principal
+
+- `src/app/main-panel`: painel inicial
+- `src/app/pages/login`: login
+- `src/app/pages/extrato`: extrato
+- `src/app/pages/transferencias`: transferências
+- `src/app/pages/credito`: crédito
+- `src/app/core/service/api.service.ts`: integração com API fake
+
+## Observações
+
+- Projeto com SSR configurado pelo Angular.
+- Algumas animações e estilos são definidos globalmente em `src/styles.scss`.

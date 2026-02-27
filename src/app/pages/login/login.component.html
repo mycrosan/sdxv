@@ -15,7 +15,7 @@
       <p>O futuro do seu dinheiro</p>
     </div>
 
-    <form class="login-form">
+    <form class="login-form" (ngSubmit)="login($event)">
       <mat-form-field appearance="outline" class="custom-field">
         <mat-label>CPF</mat-label>
         <input matInput placeholder="000.000.000-00">
@@ -33,7 +33,7 @@
         <a href="#" class="forgot-pwd">Esqueci minha senha</a>
       </div>
 
-      <button mat-flat-button color="primary" class="login-btn" (click)="login()">
+      <button type="submit" mat-flat-button color="primary" class="login-btn">
         ENTRAR
         <mat-icon>arrow_forward</mat-icon>
       </button>
