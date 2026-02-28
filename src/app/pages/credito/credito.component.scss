@@ -90,19 +90,46 @@
     background: var(--brand-gradient);
     color: white !important;
     border: none !important;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(96, 165, 250, 0) 70%);
+    }
 
     .card-content {
         min-height: 100%;
+        gap: 14px;
+        position: relative;
+        z-index: 1;
     }
 
     .loan-highlight {
-        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         gap: 12px;
+        border-radius: 18px;
+    }
+
+    .primary-highlight {
+        flex: 1;
+        padding: 12px 8px 4px;
+    }
+
+    .installment-highlight {
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .card-label {
@@ -120,13 +147,28 @@
         font-family: var(--font-display);
         color: white;
         word-break: break-word;
+        text-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+    }
+
+    .installment-value {
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1;
+        font-weight: 800;
+        font-family: var(--font-display);
+        color: #dbeafe;
+        word-break: break-word;
+    }
+
+    .mini-note {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
     }
 
     .request-btn {
         height: 56px !important;
         border-radius: 16px !important;
         font-weight: 700 !important;
-        margin-top: 24px;
+        margin-top: auto;
         background: white !important;
         color: var(--primary-dark) !important;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;

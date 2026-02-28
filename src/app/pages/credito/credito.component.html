@@ -63,9 +63,14 @@
       <div class="glass-card result-card p-4 h-100">
         <div class="card-glow"></div>
         <div class="card-content d-flex flex-column h-100">
-          <div class="loan-highlight">
+          <div class="loan-highlight primary-highlight">
             <div class="card-label">Valor do Empréstimo</div>
             <div class="payment-value">{{ loanAmount | currency:'BRL':'symbol':'1.2-2' }}</div>
+          </div>
+          <div class="loan-highlight installment-highlight">
+            <div class="card-label">Parcela Mensal</div>
+            <div class="installment-value">{{ monthlyPayment | currency:'BRL':'symbol':'1.2-2' }}</div>
+            <div class="mini-note">{{ installments }}x parcelas estimadas</div>
           </div>
 
           <button mat-flat-button color="primary" class="request-btn w-100" (click)="requestLoan()">
